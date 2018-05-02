@@ -1,0 +1,54 @@
+.main {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 90vh;
+	background-color: gainsboro;
+
+	h1 {
+		font-family: 'Roboto', sans-serif;
+		font-size: 3em;
+	}
+}
+
+.text-container {
+	max-width: 50%;
+}
+
+.footer {
+
+	background-color: #363636;
+	padding-top: 1em;
+	padding-bottom: 1em;
+
+	ul, li {
+		list-style: none;
+	}
+
+	ul {
+		margin: 0;
+		padding: 0;
+	}
+
+	.icons {
+
+		font-size: 4em;
+		color: #fff;
+		padding: 0.5em;
+		-webkit-transition: color 0.5s ease-out;
+		-moz-transition: color 0.5s ease-out;
+		-o-transition: color 0.5s ease-out;
+		transition: color 0.5s ease-out;
+
+		&:hover {
+			color: #8a3ab9;
+		}
+	}
+
+	.social-links {
+		display: flex;
+		flex-direction: column;
+	    justify-content: center;
+	    align-items: center;
+	}
+}

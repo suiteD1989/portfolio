@@ -1,0 +1,14 @@
+{
+  "name": "under-construction",
+  "version": "1.0.0",
+  "description": "Placeholder template for portfolio",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Daragh Cassidy",
+  "license": "ISC",
+  "devDependencies": {
+    "font-awesome": "^4.7.0"
+  }
+}
