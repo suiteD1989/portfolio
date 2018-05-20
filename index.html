@@ -11,6 +11,8 @@
 	<meta name="referrer" content="always">
 
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
+
 	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css">
 	<link rel="stylesheet" type="text/css" href="dist/css/custom.css">
@@ -19,23 +21,36 @@
 <body>
 	<header>
 		<nav class="navbar fixed-top navbar-light bg-light">
-		  <!-- <a class="navbar-brand" href="#">nav</a> -->
-		  <button class="hamburger hamburger--spin" type="button">
-			  <span class="hamburger-box">
-			    <span class="hamburger-inner"></span>
-			  </span>
+	 		<span class="navbar-brand nav-title">
+  				<a section-target="main" class="return-top">DC</a>
+  			</span>
+		  	<button class="hamburger hamburger--spin" type="button">
+		  		<span class="hamburger-box">
+			    	<span class="hamburger-inner"></span>
+			  	</span>
 			</button>
+			<div class="dropdown-content">
+	      		<a section-target="skills" class="section-link">Skills</a>
+				<a section-target="niche" class="section-link">Optimisation</a>
+				<a section-target="about" class="section-link">About</a>
+		    </div>
 		</nav>	
 	</header>
 
 	<section>
-		<div class="container-fluid main">
+		<div class="container-fluid main" id="main">
 			<div class="container h-100">
-				<div class="row h-100 justify-content-center align-items-center">
-					<div class="col-12">
-						<div class="img-circular">
-							<h1>Daragh Cassidy Web Development</h1>
-							<img src="public/images/me.jpg">
+				<div class="row">
+					<div class="fixed-to-top">
+						<div class="has-animation main-title animation-ltr" data-delay="1">
+							<h1><span>Daragh Cassidy | Web Development</span></h1>
+						</div>
+					</div>
+				</div>
+				<div class="row">	
+					<div class="fixed-to-bottom">
+						<div class="has-animation main-message animation-rtl" data-delay="1000">
+							<span>I like to build things</span>
 						</div>
 					</div>
 				</div>
@@ -44,37 +59,37 @@
 	</section>
 
 	<section>
-		<div class="container-fluid skills">
-			<div class="container h-100">
-				<div class="row justify-content-center align-items-center">
+		<div class="container-fluid skills" id="skills">
+			<div class="container">
+				<div class="row">
 					<div class="col-md-12">
 						<h2>Skills</h2>
 						<hr>
 					</div>
 				</div>
-				<div class="row h-100 justify-content-center align-items-center">
-					<div class="col">
+				<div class="row">
+					<div class="col-md-3 col-xs-12 col-sm-12">
 						<div class="skill">
-							<div class="styles">
+							<div class="html">
 								<i class="fab fa-html5"></i>
 							</div>
 						</div>
 					</div>
-					<div class="col">
+					<div class="col-md-3 col-xs-12 col-sm-12">
 						<div class="skill">
 							<div class="styles">
 								<i class="fab fa-css3-alt"></i>
 							</div>
 						</div>
 					</div>
-					<div class="col">
+					<div class="col-md-3 col-xs-12 col-sm-12">
 						<div class="skill">
 							<div class="js">
 								<i class="fab fa-js"></i>
 							</div>
 						</div>
 					</div>
-					<div class="col">
+					<div class="col-md-3 col-xs-12 col-sm-12">
 						<div class="skill">
 							<div class="php">
 								<i class="fab fa-php"></i>
@@ -87,32 +102,34 @@
 	</section>
 
 	<section>
-		<div class="container-fluid niche">
-			<div class="container h-100">
+		<div class="container-fluid niche" id="niche">
+			<div class="container">
 				<div class="row">
 					<div class="col-12">
 						<h2>Page Speed</h2>
+						<hr>
 					</div>
 					
-					<div class="col-8">
-						<p>Spiel about page speed ljbnvalfknvlafk lknaflklkad l kafnvlkadflk lkfnvlkanflkanfladlkfnvafl lkfvf</p>
+					<div class="col-md-8 col-xs-12 col-sm-12 d-flex align-items-center">
+						<p>Years of experience building web sites that are lightning fast and top the <a href="https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fwww.daraghcassidy.com%2F&tab=desktop" target="_blank"> Google PageSpeed Insights charts</a>.</p>
 					</div>
 
-					<div class="col-sm-4">
-						<p>Page speed image here</p>
+					<div class="col-md-4 col-xs-12 col-sm-12 niche-icon text-center">
+						<i class="fas fa-tachometer-alt"></i>
 					</div>
 				</div>
 				<div class="row">	
 					<div class="col-12">
 						<h2>Responsiveness</h2>
+						<hr>
 					</div>
 
-					<div class="col-4">
-						<p>responsive image here</p>
+					<div class="col-md-4 col-xs-12 col-sm-12 niche-icon text-center">
+						<i class="fas fa-mobile"></i>
 					</div>
 
-					<div class="col-6">
-						<p>Spiel about building responsive sites</p>
+					<div class="col-md-6 col-xs-12 col-sm-12 d-flex align-items-center">
+						<p>More than half of all internet traffic is mobile based. I pride myself on building quality repsonisve sites that look great on all devices.</p>
 					</div>
 				</div>
 			</div>	
@@ -120,15 +137,15 @@
 	</section>
 
 	<section>
-		<div class="container-fluid about">
+		<div class="container-fluid about" id="about">
 			<div class="container">
-				<div class="row justify-content-md-center">
+				<div class="row">
 					<div class="col-md-12">
 						<h2>About</h2>
 					</div>
 				</div>
 				
-				<div class="row justify-content-md-center">
+				<div class="row">
 					<div class="col-md-12">
 						<p>Some spiel about me.</p>
 					</div>		
@@ -151,10 +168,10 @@
 				<div class="row social-links">
 					<ul>
 						<li>
-							<a href="https://github.com/suiteD1989">
+							<a href="https://github.com/suiteD1989" target="_blank">
 								<i class="fab fa-github icons"></i>
 							</a>
-							<a href="https://www.instagram.com/daragh_cassidy/">
+							<a href="https://www.instagram.com/daragh_cassidy/" target="_blank">
 								<i class="fab fa-instagram icons"></i>
 							</a>
 						</li>
