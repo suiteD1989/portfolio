@@ -6990,21 +6990,20 @@ body {
   overflow-y: scroll; }
 
 .hamburger-inner {
-  background-color: #fff; }
+  background-color: #598381; }
 
 .hamburger-inner::after {
-  background-color: #fff; }
+  background-color: #598381; }
 
 .hamburger-inner::before {
-  background-color: #fff; }
+  background-color: #598381; }
 
 .navbar {
-  background: none;
-  border-bottom: 1px solid #fff; }
+  background: none; }
   .navbar button {
     outline: 0; }
   .navbar .nav-title {
-    color: #fff; }
+    color: #598381; }
     .navbar .nav-title:hover {
       cursor: pointer;
       color: #A2AD59; }
@@ -7016,19 +7015,16 @@ body {
     height: 0;
     top: 4.8em;
     z-index: 1030;
-    right: 0;
-    background-color: #08605F;
-    border-bottom: 1px solid #fff;
-    border-left: 1px solid #fff;
-    border-right: 1px solid #fff; }
+    right: 0; }
     .navbar .dropdown-content a {
       transition: all 1s;
       float: none;
-      text-align: center !important;
+      text-transform: uppercase;
+      text-align: right !important;
       padding: 12px 16px;
       text-decoration: none;
       display: none;
-      color: #fff; }
+      color: #598381; }
       .navbar .dropdown-content a:hover {
         color: #A2AD59;
         text-decoration: underline; }
@@ -7057,16 +7053,20 @@ body {
 .text-right {
   text-align: right; }
 
+.padding-0 {
+  padding-right: 0;
+  padding-left: 0; }
+
 .main {
   display: flex;
   align-items: center !important;
   height: 100vh;
-  background-color: #fff;
+  background-color: #F8F8FF;
   color: #177E89; }
   .main h1 {
     text-align: left;
     font-family: 'Cabin', sans-serif;
-    text-transform: capitalize;
+    text-transform: uppercase;
     font-size: 4em;
     font-weight: 900; }
   .main .main-message {
@@ -7079,32 +7079,56 @@ body {
 .about {
   display: flex;
   align-items: center !important;
-  color: #fff;
+  color: #598381;
   height: 100vh;
-  background-color: #8E936D; }
+  background-color: #F8F8FF; }
+  .about h2 {
+    font-size: 3em;
+    font-weight: 900;
+    text-transform: uppercase; }
+  .about a {
+    color: #A2AD59; }
+  .about p {
+    font-size: 1.2em;
+    font-weight: 100; }
+  .about .top {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em; }
+    .about .top span {
+      border-bottom: 6px solid #8E936D; }
+  .about .bottom {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em; }
+  .about .profile img {
+    width: 50%; }
 
 .skills {
   display: flex;
   align-items: center !important;
   height: 100vh;
   color: #202020;
-  background-color: #fff; }
+  background-color: #F8F8FF; }
   .skills h2 {
     text-align: center;
+    text-transform: uppercase;
     font-size: 3em;
     font-weight: 900;
     color: #177E89; }
   .skills hr {
     color: #177E89;
     border-top: 1px solid #177E89; }
+  .skills .top {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em; }
+    .skills .top span {
+      border-bottom: 6px solid #8E936D; }
   .skills .skill {
     color: #fff;
     text-align: center;
     font-size: 10em;
     transition: transform 0.5s ease 0s; }
     .skills .skill:hover {
-      cursor: pointer;
-      transform: rotate(360deg); }
+      cursor: pointer; }
   .skills .html {
     color: #A2AD59; }
   .skills .styles {
@@ -7117,16 +7141,24 @@ body {
 .niche {
   display: flex;
   align-items: center !important;
-  color: #fff;
-  height: 100vh;
-  background-color: #8E936D;
-  font-size: 1.4em; }
-  .niche hr {
-    border-top: 1px solid #fff; }
-  .niche a {
+  color: #598381;
+  height: 100vh; }
+  .niche h2 {
+    text-transform: uppercase;
+    font-size: 3em;
+    font-weight: 900;
     color: #177E89; }
+  .niche a {
+    color: #177E89;
+    font-weight: bold; }
   .niche p {
-    font-size: 0.8em; }
+    font-size: 1.2em;
+    font-weight: 100; }
+  .niche .top {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em; }
+    .niche .top span {
+      border-bottom: 6px solid #8E936D; }
   .niche .niche-icon {
     font-size: 7em; }
 
@@ -7159,6 +7191,13 @@ body {
     animation: revealRTL 1.8s ease; }
   .has-animation.animation-rtl.animate-in:after {
     animation: revealRTL 1s .6s ease; }
+
+.diamond {
+  width: 350px;
+  height: 350px;
+  background-color: #598381;
+  background-size: cover;
+  clip-path: polygon(0% 100%, 100% 100%, 0% 0%); }
 
 .footer {
   background-color: #08605F;

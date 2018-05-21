@@ -20,7 +20,7 @@
 
 <body>
 	<header>
-		<nav class="navbar fixed-top navbar-light bg-light">
+		<nav class="navbar fixed-top">
 	 		<span class="navbar-brand nav-title">
   				<a section-target="main" class="return-top">DC</a>
   			</span>
@@ -31,7 +31,7 @@
 			</button>
 			<div class="dropdown-content">
 				<a section-target="about" class="section-link">About</a>
-	      		<a section-target="skills" class="section-link">Skills</a>
+	      		<!-- <a section-target="skills" class="section-link">Skills</a> -->
 				<a section-target="niche" class="section-link">Optimisation</a>
 		    </div>
 		</nav>	
@@ -62,27 +62,36 @@
 		<div class="container-fluid about" id="about">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-12">
-						<h2>About</h2>
+					<div class="col-md-6 padding-0">
+						<div class="col-md-12 top">
+							<h2><span>About</span></h2>
+						</div>
+						<div class="col-md-12 bottom">
+							<p>My Name is Daragh. I'm a developer based in Dublin, Ireland.</p>
+							<p>If I'm not building something for the web, I'm probably in the gym or making dreadfull music.</p>
+						</div>
 					</div>
-				</div>
-				
-				<div class="row">
-					<div class="col-md-12">
-						<p>Some spiel about me.</p>
-					</div>		
+					<div class="col-md-6 padding-0">
+						<div class="col-md-12 text-right top">
+							<h2><span>Work</span></h2>
+						</div>
+						<div class="col-md-12 text-right bottom">
+							<p>Currently employed at <a href="https://www.linkedin.com/company/kax-media/" target="_blank">Kax Media</a> as a front end developer.</p>
+
+							<p>However, I'm still free for freelance work, if you have a project you want to talk about feel free to get in touch!</p>
+						</div>
+					</div>
 				</div>
 			</div>	
 		</div>
 	</section>
 
-	<section>
+	<!-- <section>
 		<div class="container-fluid skills" id="skills">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-12">
-						<h2>Skills</h2>
-						<hr>
+					<div class="col-md-12 top">
+						<h2 class="text-left"><span>Skills</span></h2>
 					</div>
 				</div>
 				<div class="row">
@@ -117,15 +126,14 @@
 				</div>		
 			</div>
 		</div>
-	</section>
+	</section> -->
 
 	<section>
 		<div class="container-fluid niche" id="niche">
 			<div class="container">
 				<div class="row">
-					<div class="col-12">
-						<h2>Page Speed</h2>
-						<hr>
+					<div class="col-12 top">
+						<h2><span>Page Speed</span></h2>
 					</div>
 					
 					<div class="col-md-8 col-xs-12 col-sm-12 d-flex align-items-center">
@@ -137,9 +145,8 @@
 					</div>
 				</div>
 				<div class="row">	
-					<div class="col-12">
-						<h2>Responsiveness</h2>
-						<hr>
+					<div class="col-12 top">
+						<h2><span>Responsiveness</span></h2>
 					</div>
 
 					<div class="col-md-4 col-xs-12 col-sm-12 niche-icon text-center">
@@ -156,8 +163,24 @@
 
 	<section>
 		<div class="contact">
-			<div class="">
-				
+			<div class="container">
+				<div class="row">
+					<form action="mail.php" method="POST">
+						<div class="form-group">
+							<label>Name</label>
+							<input type="text" name="name">
+						</div>
+						<div class="form-group">
+							<label>Email</label>
+							<input type="text" name="email">
+						</div>
+						<div class="form-group">	
+							<label>Message</label>
+							<textarea name="message" rows="6" cols="25"></textarea>
+						</div>	
+						<input type="submit" value="Send"><input type="reset" value="Clear">
+					</form>
+				</div>
 			</div>
 		</div>
 	</section>
