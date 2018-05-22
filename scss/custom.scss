@@ -7,7 +7,7 @@ $brown: #8E936D;
 $blue-1: #598381;
 $blue-2: #177E89;
 $blue-3: #08605F;
-$white: #F8F8FF;
+$white: #fbfbfb;
 $black: #202020;
 
 body {
@@ -81,36 +81,6 @@ body {
 	}
 }
 
-.bg-light {
-	background-color: $blue-3 !important;
-}
-
-.fixed-to-bottom {
-	position: absolute;
-	bottom: 0;
-	right: 10%;
-	padding-bottom: 1.5em;
-}
-
-.fixed-to-top {
-	position: absolute;
-	top: 0;
-	padding-top: 6.5em;	
-}
-
-.text-left {
-	text-align: left;
-}
-
-.text-right {
-	text-align: right;
-}
-
-.padding-0{
-    padding-right:0;
-    padding-left:0;
-}
-
 .main {
 	display: flex;
     align-items: center !important;
@@ -122,7 +92,7 @@ body {
 		text-align: left;
 		font-family: 'Cabin', sans-serif;
 		text-transform: uppercase;
-		font-size: 4em;
+		font-size: 3em;
 		font-weight: 900;
 	}
 
@@ -136,7 +106,7 @@ body {
 		text-transform: capitalize;
 
 			span {
-				border-bottom: 6px solid $blue-2;
+				border-bottom: 6px solid $brown;
 			}
 	}
 
@@ -147,7 +117,7 @@ body {
     align-items: center !important;
 	color: $blue-1;
 	height: 100vh;
-	background-color: $white;
+	background: rgba(142,147,109, .3);
 
 		h2 {
 			font-size: 3em;
@@ -245,6 +215,7 @@ body {
     align-items: center !important;
 	color: $blue-1;
 	height: 100vh;
+	background-color: $white;
 
 		h2 {
 			text-transform: uppercase;
@@ -278,7 +249,88 @@ body {
 }
 
 .contact {
-	
+	display: flex;
+    align-items: center !important;
+	color: $blue-1;
+	height: 100vh;
+	background: rgba(142,147,109, .3);	
+
+		h2 {
+			text-transform: uppercase;
+			font-size: 3em;
+			font-weight: 900;
+			color: $blue-2;
+		}
+
+		p {
+			font-size: 1.2em;
+    		font-weight: 100;
+		}
+
+		.top {
+			span {
+				border-bottom: 6px solid $brown;
+			}
+		}
+
+		.submit-form {
+			background-color: $blue-2;
+			color: $white;
+			padding-left: 1em;
+			padding-right: 1em;
+
+				&:hover {
+					background-color: $blue-1;
+				}
+		}
+
+		.form-success {
+			display: none;
+		}
+
+		.form-fail {
+			display: none;
+		}
+}
+
+// Global Styles
+
+.push {
+	padding-bottom: 10em;
+}
+
+.bg-light {
+	background-color: $blue-3 !important;
+}
+
+.is-visible {
+	display: block !important;
+}
+
+.fixed-to-bottom {
+	position: absolute;
+	bottom: 0;
+	right: 10%;
+	padding-bottom: 1.5em;
+}
+
+.fixed-to-top {
+	position: absolute;
+	top: 0;
+	padding-top: 6.5em;	
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.padding-0{
+    padding-right:0;
+    padding-left:0;
 }
 
 .text-container {
@@ -460,6 +512,10 @@ body {
 		.icons {
 			font-size: 3em;
 		}
+	}
+
+	.push {
+		padding-bottom: 3em;
 	}
 }
 

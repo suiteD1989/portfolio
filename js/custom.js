@@ -45,6 +45,44 @@ function isScrolledIntoView(elem) {
     return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
 }
 
+function formSubmit() {
+	$('#form-submit').submit(function(e){
+    	e.preventDefault();
+	    $.ajax({
+	        url:'contact.php',
+	        type:'post',
+	        data:$('#contact-form').serialize(),
+	        success:function(){
+	            //whatever you wanna do after the form is successfully submitted
+	            $('#contact-form')[0].reset();
+	            $('.form-success').addClass('is-visible');
+	        },
+	        error: function(XMLHttpRequest, textStatus, errorThrown) {
+	        	$('.form-fail').addClass('is-visible');
+	        }
+	    });
+	});
+}
+
+function formValidate() {
+	$('#contact-form').parsley().on('field:validated', function() {
+    	var ok = $('.parsley-error').length === 0;
+	    $('.bs-callout-info').toggleClass('hidden', !ok);
+	    $('.bs-callout-warning').toggleClass('hidden', ok);
+
+	    if (ok) {
+	    	console.log('alright');
+	    }
+
+	    else {
+	    	console.log('oh fuck');
+	    }
+  	})
+	.on('form:submit', function() {
+		
+	});
+}
+
 // Declaration ends
 
 $(document).ready(function() {
@@ -52,11 +90,13 @@ $(document).ready(function() {
   	scrollToSection();
   	scrollToTop();
   	hasAnimation();
+  	formValidate();
+  	// formSubmit();
 });
 
 $(window).scroll(function(){
   
-    if(isScrolledIntoView('#main')) {
+    if(isScrolledIntoView('#contact')) {
 		
     }
 });

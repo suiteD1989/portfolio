@@ -37,7 +37,7 @@ gulp.task('css', function() {
 gulp.task('scripts', function() {
     return gulp.src([
         'node_modules/jquery/dist/jquery.min.js', 
-        'node_modules/popper.js/dist/umd/popper.min.js', 
+        'node_modules/parsleyjs/dist/parsley.min.js', 
         'js/custom.js'])
         .pipe(concat('all.js'))
         .pipe(gulp.dest('dist'))
@@ -45,7 +45,7 @@ gulp.task('scripts', function() {
         .pipe(uglify().on('error', function(e){
             console.log(e);
          }))
-        .pipe(gulp.dest('dist/js'));
+        .pipe(gulp.dest('dist/js/'));
 });
 
 // Watch Files For Changes
