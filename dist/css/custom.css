@@ -7163,9 +7163,22 @@ body {
     .contact .submit-form:hover {
       background-color: #598381; }
   .contact .form-success {
-    display: none; }
+    display: none;
+    text-align: center;
+    font-size: 2em;
+    padding-top: 2em; }
   .contact .form-fail {
-    display: none; }
+    display: none;
+    text-align: center;
+    font-size: 2em;
+    padding-top: 2em;
+    color: #b71212; }
+  .contact .parsley-errors-list {
+    list-style: none;
+    color: #b71212; }
+  .contact .parsley-required {
+    text-align: right;
+    padding-top: 0.5em; }
 
 .push {
   padding-bottom: 10em; }
@@ -7227,12 +7240,59 @@ body {
   .has-animation.animation-rtl.animate-in:after {
     animation: revealRTL 1s .6s ease; }
 
-.diamond {
-  width: 350px;
-  height: 350px;
-  background-color: #598381;
-  background-size: cover;
-  clip-path: polygon(0% 100%, 100% 100%, 0% 0%); }
+.about-animation {
+  position: relative; }
+  .about-animation h1, .about-animation img, .about-animation span, .about-animation p, .about-animation a {
+    opacity: 0; }
+  .about-animation.animate-in h1, .about-animation.animate-in img, .about-animation.animate-in span, .about-animation.animate-in p, .about-animation.animate-in a {
+    animation: textHidden 0.1s 1.1s forwards; }
+  .about-animation.animate-in:before, .about-animation.animate-in:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    z-index: 10; }
+  .about-animation.animate-in:before {
+    background-color: #598381; }
+  .about-animation.animate-in:after {
+    background-color: #08605F;
+    animation-delay: .5s; }
+  .about-animation.animation-ltr.animate-in:before {
+    animation: revealLTR 1.8s ease; }
+  .about-animation.animation-ltr.animate-in:after {
+    animation: revealLTR 1s .6s ease; }
+  .about-animation.animation-rtl.animate-in:before {
+    animation: revealRTL 1.8s ease; }
+  .about-animation.animation-rtl.animate-in:after {
+    animation: revealRTL 1s .6s ease; }
+
+.niche-animation {
+  position: relative; }
+  .niche-animation h1, .niche-animation img, .niche-animation span, .niche-animation p, .niche-animation i {
+    opacity: 0; }
+  .niche-animation.animate-in h1, .niche-animation.animate-in img, .niche-animation.animate-in span, .niche-animation.animate-in p, .niche-animation.animate-in i {
+    animation: textHidden 0.1s 1.1s forwards; }
+  .niche-animation.animate-in:before, .niche-animation.animate-in:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    z-index: 10; }
+  .niche-animation.animate-in:before {
+    background-color: #598381; }
+  .niche-animation.animate-in:after {
+    background-color: #08605F;
+    animation-delay: .5s; }
+  .niche-animation.animation-ltr.animate-in:before {
+    animation: revealLTR 1.8s ease; }
+  .niche-animation.animation-ltr.animate-in:after {
+    animation: revealLTR 1s .6s ease; }
+  .niche-animation.animation-rtl.animate-in:before {
+    animation: revealRTL 1.8s ease; }
+  .niche-animation.animation-rtl.animate-in:after {
+    animation: revealRTL 1s .6s ease; }
 
 .footer {
   background-color: #08605F;
@@ -7246,13 +7306,25 @@ body {
   .footer .icons {
     font-size: 4em;
     color: #fff;
-    padding: 0.5em;
+    padding: 0.5em; }
+  .footer .github:hover {
+    color: #24292e;
     -webkit-transition: color 0.5s ease-out;
     -moz-transition: color 0.5s ease-out;
     -o-transition: color 0.5s ease-out;
     transition: color 0.5s ease-out; }
-    .footer .icons:hover {
-      color: #8a3ab9; }
+  .footer .instagram:hover {
+    color: #8a3ab9;
+    -webkit-transition: color 0.5s ease-out;
+    -moz-transition: color 0.5s ease-out;
+    -o-transition: color 0.5s ease-out;
+    transition: color 0.5s ease-out; }
+  .footer .soundcloud:hover {
+    color: #f50;
+    -webkit-transition: color 0.5s ease-out;
+    -moz-transition: color 0.5s ease-out;
+    -o-transition: color 0.5s ease-out;
+    transition: color 0.5s ease-out; }
   .footer .social-links {
     display: flex;
     flex-direction: column;
@@ -7292,6 +7364,12 @@ body {
   .main h1 {
     font-size: 1.4em; }
   .main .main-message {
+    font-size: 1.4em; }
+  .about h2 {
+    font-size: 1.4em; }
+  .niche h2 {
+    font-size: 1.4em; }
+  .contact h2 {
     font-size: 1.4em; }
   .about {
     height: 100%;

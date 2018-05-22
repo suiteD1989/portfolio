@@ -36,6 +36,22 @@ function hasAnimation() {
   	});
 }
 
+function aboutAnimation() {
+	$('.about-animation').each(function(index) {
+		$(this).delay($(this).data('delay')).queue(function(){
+	  		$(this).addClass('animate-in');
+		});
+  	});
+}
+
+function nicheAnimation() {
+	$('.niche-animation').each(function(index) {
+		$(this).delay($(this).data('delay')).queue(function(){
+	  		$(this).addClass('animate-in');
+		});
+  	});
+}
+
 function isScrolledIntoView(elem) {
     var docViewTop = $(window).scrollTop();
     var docViewBottom = docViewTop + $(window).height();
@@ -64,23 +80,27 @@ function formSubmit() {
 	});
 }
 
-function formValidate() {
-	$('#contact-form').parsley().on('field:validated', function() {
-    	var ok = $('.parsley-error').length === 0;
-	    $('.bs-callout-info').toggleClass('hidden', !ok);
-	    $('.bs-callout-warning').toggleClass('hidden', ok);
-
-	    if (ok) {
-	    	console.log('alright');
-	    }
-
-	    else {
-	    	console.log('oh fuck');
-	    }
-  	})
-	.on('form:submit', function() {
-		
-	});
+function validateSubmit() {
+	$('#contact-form').submit(function(e) {
+	
+  	e.preventDefault(); 
+  	if ( $(this).parsley().isValid() ) {
+ 		$.ajax({
+			url:'contact.php',
+			data:$('#contact-form').serialize(),
+			type:'POST',
+			success:function(data){
+ 				console.log(data);
+         		$('#contact-form')[0].reset();
+	            $('.form-success').addClass('is-visible');
+       		},
+       		error:function(data){
+         		$('.form-fail').addClass('is-visible');
+         		console.log(error);
+       		}
+     	}); 
+   	}
+});
 }
 
 // Declaration ends
@@ -90,13 +110,14 @@ $(document).ready(function() {
   	scrollToSection();
   	scrollToTop();
   	hasAnimation();
-  	formValidate();
-  	// formSubmit();
+  	validateSubmit();
 });
 
 $(window).scroll(function(){
-  
-    if(isScrolledIntoView('#contact')) {
-		
+    if(isScrolledIntoView('#about')) {
+		aboutAnimation();
+    }
+    if(isScrolledIntoView('#niche')) {
+		nicheAnimation();
     }
 });
