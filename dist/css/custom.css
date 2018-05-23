@@ -7303,6 +7303,9 @@ body {
   .footer ul {
     margin: 0;
     padding: 0; }
+  .footer p {
+    text-align: center;
+    font-size: 0.7em; }
   .footer .icons {
     font-size: 4em;
     color: #fff;
@@ -7390,6 +7393,28 @@ body {
       font-size: 3em; }
   .push {
     padding-bottom: 3em; } }
+
+@media (max-width: 767px) and (orientation: landscape) {
+  .main {
+    height: 35em;
+    font-size: 0.7em;
+    padding-top: 0.75em;
+    padding-bottom: 0.75em; }
+  .about {
+    height: 35em;
+    font-size: 0.7em;
+    padding-top: 0.75em;
+    padding-bottom: 0.75em; }
+  .niche {
+    height: 45em;
+    font-size: 0.7em;
+    padding-top: 0.75em;
+    padding-bottom: 0.75em; }
+  .contact {
+    height: 45em;
+    font-size: 0.7em;
+    padding-top: 0.75em;
+    padding-bottom: 0.75em; } }
 
 /* Landscape phone to portrait tablet */
 /* Portrait tablet to landscape and desktop */

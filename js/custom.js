@@ -16,6 +16,10 @@ function scrollToSection() {
 		$('html, body').animate({
 	        scrollTop: $("#"+target).offset().top
 	    }, 500);
+
+	   	$(".hamburger").toggleClass("is-active");
+		$(".dropdown-content").toggleClass('toggle-visibilty');
+    	$(".dropdown-content a").toggleClass('show-hide');
 	});
 }
 
@@ -36,31 +40,6 @@ function hasAnimation() {
   	});
 }
 
-function aboutAnimation() {
-	$('.about-animation').each(function(index) {
-		$(this).delay($(this).data('delay')).queue(function(){
-	  		$(this).addClass('animate-in');
-		});
-  	});
-}
-
-function nicheAnimation() {
-	$('.niche-animation').each(function(index) {
-		$(this).delay($(this).data('delay')).queue(function(){
-	  		$(this).addClass('animate-in');
-		});
-  	});
-}
-
-function isScrolledIntoView(elem) {
-    var docViewTop = $(window).scrollTop();
-    var docViewBottom = docViewTop + $(window).height();
-    var elemTop = $(elem).offset().top;
-    var elemBottom = elemTop + $(elem).height();
-
-    return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
-}
-
 function formSubmit() {
 	$('#form-submit').submit(function(e){
     	e.preventDefault();
@@ -69,7 +48,6 @@ function formSubmit() {
 	        type:'post',
 	        data:$('#contact-form').serialize(),
 	        success:function(){
-	            //whatever you wanna do after the form is successfully submitted
 	            $('#contact-form')[0].reset();
 	            $('.form-success').addClass('is-visible');
 	        },
@@ -93,9 +71,11 @@ function validateSubmit() {
  				console.log(data);
          		$('#contact-form')[0].reset();
 	            $('.form-success').addClass('is-visible');
+	            $('.form-fail').removeClass('is-visible');
        		},
        		error:function(data){
          		$('.form-fail').addClass('is-visible');
+         		$('.form-success').removeClass('is-visible');
          		console.log(error);
        		}
      	}); 
@@ -103,6 +83,20 @@ function validateSubmit() {
 });
 }
 
+$.fn.isInViewport = function() {
+	var elementTop = $(this).offset().top;
+	var elementBottom = elementTop + $(this).outerHeight();
+	var viewportTop = $(window).scrollTop();
+	var viewportBottom = viewportTop + $(window).height();
+
+	return elementBottom > viewportTop && elementTop < viewportBottom;
+};
+
+function getYear() {
+	var date = (new Date().getFullYear());
+
+	$('.date').append(date);
+}
 // Declaration ends
 
 $(document).ready(function() {
@@ -111,13 +105,19 @@ $(document).ready(function() {
   	scrollToTop();
   	hasAnimation();
   	validateSubmit();
+  	getYear();
 });
 
-$(window).scroll(function(){
-    if(isScrolledIntoView('#about')) {
-		aboutAnimation();
-    }
-    if(isScrolledIntoView('#niche')) {
-		nicheAnimation();
-    }
+$(window).on('resize scroll', function() {
+	$('.section-animate').each(function(){
+		var section = $(this).attr('id');
+
+		if ($(this).isInViewport()) {
+			$('.'+section+'-animation').each(function(index) {
+				$(this).delay($(this).data('delay')).queue(function(){
+	  				$(this).addClass('animate-in');
+				});
+  			});
+    	} 
+	});
 });

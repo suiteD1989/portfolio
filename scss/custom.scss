@@ -509,6 +509,11 @@ body {
 		padding: 0;
 	}
 
+	p {
+		text-align: center;
+		font-size: 0.7em;
+	}
+
 	.icons {
 
 		font-size: 4em;
@@ -661,9 +666,36 @@ body {
 	}
 }
 
+@media (max-width: 767px) and (orientation: landscape) {
+	.main {
+		height: 35em;
+		font-size: 0.7em;
+		padding-top: 0.75em;
+		padding-bottom: 0.75em;
+	}
+	.about {
+		height: 35em;
+		font-size: 0.7em;
+		padding-top: 0.75em;
+		padding-bottom: 0.75em;
+	}
+	.niche {
+		height: 45em;
+		font-size: 0.7em;
+		padding-top: 0.75em;
+		padding-bottom: 0.75em;
+	}
+	.contact {
+		height: 45em;
+		font-size: 0.7em;
+		padding-top: 0.75em;
+		padding-bottom: 0.75em;
+	}
+}
+
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
-
+	
 }
 
 /* Portrait tablet to landscape and desktop */
