@@ -63,22 +63,24 @@ function validateSubmit() {
 	
   	e.preventDefault(); 
   	if ( $(this).parsley().isValid() ) {
- 		$.ajax({
-			url:'contact.php',
-			data:$('#contact-form').serialize(),
-			type:'POST',
-			success:function(data){
- 				console.log(data);
-         		$('#contact-form')[0].reset();
-	            $('.form-success').addClass('is-visible');
-	            $('.form-fail').removeClass('is-visible');
-       		},
-       		error:function(data){
-         		$('.form-fail').addClass('is-visible');
-         		$('.form-success').removeClass('is-visible');
-         		console.log(error);
-       		}
-     	}); 
+ 		// $.ajax({
+			// url:'contact.php',
+			// data:$('#contact-form').serialize(),
+			// type:'POST',
+			// success:function(data){
+ 		// 		console.log(data);
+   //       		$('#contact-form')[0].reset();
+	  //           $('.form-success').addClass('is-visible');
+	  //           $('.form-fail').removeClass('is-visible');
+   //     		},
+   //     		error:function(data){
+   //       		$('.form-fail').addClass('is-visible');
+   //       		$('.form-success').removeClass('is-visible');
+   //       		console.log(error);
+   //     		}
+   //   	});
+		$.post("contact.php", $(this).serialize());  
+		console.log(this);  
    	}
 });
 }
