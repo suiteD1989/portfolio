@@ -19,8 +19,15 @@
 	$subject = "Contact From Portfolio Site!";
 	$mailheader = "From: $email \r\n";
 
-	mail($recipient, $subject, $formcontent, $mailheader) 
-	or die("Error: check vars for name, email and message. "
-	."name: ".$name."email: ".$email."message: ".$message);
+	mail($recipient, $subject, $formcontent, $mailheader); 
+	$success = mail($recipient, $subject, $formcontent, $mailheader); 
+
+	if (!$success) {
+	    $errorMessage = error_get_last()['message'];
+	}
+
+	else {
+		echo "alright alright!";
+	}
 
 ?>
