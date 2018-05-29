@@ -617,39 +617,50 @@ body {
 	}
 
 	.about {
+
 		h2 {
 			font-size: 1.4em;
 		}
-	}
 
-	.niche {
-		h2 {
-			font-size: 1.4em;
-		}
-	}
-
-	.contact {
-		h2 {
-			font-size: 1.4em;
-		}
-	}
-
-	.about {
 		height: 100%;
-		padding-top: 0.75em;
-		padding-bottom: 0.75em;
+		padding-top: 2em;
+		padding-bottom: 2em;
 	}
 
 	.skills {
 		height: 100%;
-		padding-top: 0.75em;
-		padding-bottom: 0.75em;
+		padding-top: 2em;
+		padding-bottom: 2em;
 	}
 
 	.niche {
+
+		h2 {
+			font-size: 1.4em;
+		}
+
 		height: 100%;
-		padding-top: 0.75em;
-		padding-bottom: 0.75em;
+		padding-top: 2em;
+		padding-bottom: 2em;
+	}
+
+	.contact {
+
+		h2 {
+			font-size: 1.4em;
+		}
+
+		height: 100%;
+		padding-top: 2em;
+		padding-bottom: 2em;
+
+		.form-success {
+			font-size: 1em !important;
+		}
+
+		.form-fail {
+			font-size: 1em !important;
+		}
 	}
 
 	.footer {

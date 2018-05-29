@@ -7368,24 +7368,32 @@ body {
     font-size: 1.4em; }
   .main .main-message {
     font-size: 1.4em; }
-  .about h2 {
-    font-size: 1.4em; }
-  .niche h2 {
-    font-size: 1.4em; }
-  .contact h2 {
-    font-size: 1.4em; }
   .about {
     height: 100%;
-    padding-top: 0.75em;
-    padding-bottom: 0.75em; }
+    padding-top: 2em;
+    padding-bottom: 2em; }
+    .about h2 {
+      font-size: 1.4em; }
   .skills {
     height: 100%;
-    padding-top: 0.75em;
-    padding-bottom: 0.75em; }
+    padding-top: 2em;
+    padding-bottom: 2em; }
   .niche {
     height: 100%;
-    padding-top: 0.75em;
-    padding-bottom: 0.75em; }
+    padding-top: 2em;
+    padding-bottom: 2em; }
+    .niche h2 {
+      font-size: 1.4em; }
+  .contact {
+    height: 100%;
+    padding-top: 2em;
+    padding-bottom: 2em; }
+    .contact h2 {
+      font-size: 1.4em; }
+    .contact .form-success {
+      font-size: 1em !important; }
+    .contact .form-fail {
+      font-size: 1em !important; }
   .footer {
     padding-top: 0.75em;
     padding-bottom: 0.75em; }
