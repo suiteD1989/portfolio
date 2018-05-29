@@ -62,46 +62,26 @@ function hasAnimation() {
   	});
 }
 
-function formSubmit() {
-	$('#form-submit').submit(function(e){
-    	e.preventDefault();
-	    $.ajax({
-	        url:'contact.php',
-	        type:'post',
-	        data:$('#contact-form').serialize(),
+function validateSubmit() {
+	$('#contact-form').submit(function(e) {
+	
+  	e.preventDefault(); 
+  	if ( $(this).parsley().isValid() ) {
+
+  		var data = $('#contact-form').serialize();
+
+		$.ajax({
+	        url: 'contact.php',
+	        type: 'POST',
+	        data: data,
 	        success:function(){
-	            //whatever you wanna do after the form is successfully submitted
 	            $('#contact-form')[0].reset();
 	            $('.form-success').addClass('is-visible');
 	        },
 	        error: function(XMLHttpRequest, textStatus, errorThrown) {
 	        	$('.form-fail').addClass('is-visible');
 	        }
-	    });
-	});
-}
-
-function validateSubmit() {
-	$('#contact-form').submit(function(e) {
-	
-  	e.preventDefault(); 
-  	if ( $(this).parsley().isValid() ) {
- 		$.ajax({
-			url:'contact.php',
-			data:$('#contact-form').serialize(),
-			type:'POST',
-			success:function(data){
- 				console.log(data);
-         		$('#contact-form')[0].reset();
-	            $('.form-success').addClass('is-visible');
-	            $('.form-fail').removeClass('is-visible');
-       		},
-       		error:function(data){
-         		$('.form-fail').addClass('is-visible');
-         		$('.form-success').removeClass('is-visible');
-         		console.log(error);
-       		}
-     	}); 
+	    });  
    	}
 });
 }
@@ -109,7 +89,6 @@ function validateSubmit() {
 $.fn.isInViewport = function() {
 	var elementTop = $(this).offset().top;
 	var elementBottom = elementTop + $(this).outerHeight();
-
 	var viewportTop = $(window).scrollTop();
 	var viewportBottom = viewportTop + $(window).height();
 
@@ -130,7 +109,6 @@ $(document).ready(function() {
   	hasAnimation();
   	validateSubmit();
   	getYear();
-  	// closeNavOnClick();
 });
 
 $(window).on('resize scroll', function() {

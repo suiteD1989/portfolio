@@ -40,13 +40,18 @@ function hasAnimation() {
   	});
 }
 
-function formSubmit() {
-	$('#form-submit').submit(function(e){
-    	e.preventDefault();
-	    $.ajax({
-	        url:'contact.php',
-	        type:'post',
-	        data:$('#contact-form').serialize(),
+function validateSubmit() {
+	$('#contact-form').submit(function(e) {
+	
+  	e.preventDefault(); 
+  	if ( $(this).parsley().isValid() ) {
+
+  		var data = $('#contact-form').serialize();
+
+		$.ajax({
+	        url: 'contact.php',
+	        type: 'POST',
+	        data: data,
 	        success:function(){
 	            $('#contact-form')[0].reset();
 	            $('.form-success').addClass('is-visible');
@@ -54,33 +59,7 @@ function formSubmit() {
 	        error: function(XMLHttpRequest, textStatus, errorThrown) {
 	        	$('.form-fail').addClass('is-visible');
 	        }
-	    });
-	});
-}
-
-function validateSubmit() {
-	$('#contact-form').submit(function(e) {
-	
-  	e.preventDefault(); 
-  	if ( $(this).parsley().isValid() ) {
- 		// $.ajax({
-			// url:'contact.php',
-			// data:$('#contact-form').serialize(),
-			// type:'POST',
-			// success:function(data){
- 		// 		console.log(data);
-   //       		$('#contact-form')[0].reset();
-	  //           $('.form-success').addClass('is-visible');
-	  //           $('.form-fail').removeClass('is-visible');
-   //     		},
-   //     		error:function(data){
-   //       		$('.form-fail').addClass('is-visible');
-   //       		$('.form-success').removeClass('is-visible');
-   //       		console.log(error);
-   //     		}
-   //   	});
-		$.post("contact.php", $(this).serialize());  
-		console.log(this);  
+	    });  
    	}
 });
 }

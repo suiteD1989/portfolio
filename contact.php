@@ -1,5 +1,9 @@
 <?php  
 	
+	error_reporting(-1);
+	ini_set('display_errors', 'On');
+	set_error_handler("var_dump");
+	
 	$name = '';
 	$email = '';
 	$message = '';
@@ -16,18 +20,9 @@
 	
 	$formcontent = "From: $name \n Message: $message";
 	$recipient = "daraghcassidy89@gmail.com";
-	$subject = "Contact From Portfolio Site!";
+	$subject = "Enquiery from $email";
 	$mailheader = "From: $email \r\n";
 
 	mail($recipient, $subject, $formcontent, $mailheader); 
-	$success = mail($recipient, $subject, $formcontent, $mailheader); 
-
-	if (!$success) {
-	    $errorMessage = error_get_last()['message'];
-	}
-
-	else {
-		echo "alright alright!";
-	}
 
 ?>

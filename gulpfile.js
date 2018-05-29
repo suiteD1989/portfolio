@@ -18,7 +18,6 @@ gulp.task('lint', function() {
         .pipe(jshint.reporter('default'));
 });
 
-
 // Compile Our Sass
 gulp.task('sass', function() {
     return gulp.src('scss/*.scss')
@@ -27,7 +26,9 @@ gulp.task('sass', function() {
 });
 
 gulp.task('css', function() {
-    gulp.src('dist/css/custom.css')
+    gulp.src([
+        'dist/css/custom.css'
+        ])
         .pipe(cssmin())
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest('dist/css'));
