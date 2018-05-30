@@ -5,6 +5,7 @@
  * @site https://jonsuh.com/hamburgers
  * @link https://github.com/jonsuh/hamburgers
  */
+@import url("node_modules/cookieconsent/build/cookieconsent.min.css");
 .hamburger {
   padding: 15px 15px;
   display: inline-block;

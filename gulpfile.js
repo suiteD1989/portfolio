@@ -38,7 +38,7 @@ gulp.task('css', function() {
 gulp.task('scripts', function() {
     return gulp.src([
         'node_modules/jquery/dist/jquery.min.js', 
-        'node_modules/parsleyjs/dist/parsley.min.js', 
+        'node_modules/cookieconsent/build/cookieconsent.min.js', 
         'js/custom.js'])
         .pipe(concat('all.js'))
         .pipe(gulp.dest('dist'))
