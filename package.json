@@ -9,6 +9,8 @@
   "author": "Daragh Cassidy",
   "license": "ISC",
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
     "bootstrap": "^4.1.1",
     "cookieconsent": "^3.0.6",
     "font-awesome": "^4.7.0",
@@ -26,5 +28,8 @@
     "jshint": "^2.9.5",
     "parsleyjs": "^2.8.1",
     "popper.js": "^1.14.3"
+  },
+  "dependencies": {
+    "gulp-uglifyes": "^0.1.3"
   }
 }
