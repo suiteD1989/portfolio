@@ -9,6 +9,8 @@ let uglify = require('gulp-uglify-es').default;
 var rename = require('gulp-rename');
 var order = require('gulp-order');
 var cssmin = require('gulp-cssmin');
+var concatCss = require('gulp-concat-css');
+
 
 
 // Lint Task
@@ -20,15 +22,16 @@ gulp.task('lint', function() {
 
 // Compile Our Sass
 gulp.task('sass', function() {
-    return gulp.src('scss/*.scss')
+    return gulp.src('src/scss/*.scss')
         .pipe(sass())
-        .pipe(gulp.dest('dist/css'));
+        .pipe(gulp.dest('src/css'));
 });
 
 gulp.task('css', function() {
     gulp.src([
-        'dist/css/custom.css'
+        'src/css/*.css'
         ])
+        .pipe(concatCss("bundle.css"))
         .pipe(cssmin())
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest('dist/css'));
