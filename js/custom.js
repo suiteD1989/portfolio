@@ -82,39 +82,39 @@ function getYear() {
 
 // cookies
 
-// function onInitialise(status) {
-//   var type = this.options.type;
-//   var didConsent = this.hasConsented();
-//   if (type == 'opt-in' && didConsent) {
-//     // enable cookies
-//   }
-//   if (type == 'opt-out' && !didConsent) {
-//     // disable cookies
-//   }
-// }
+function onInitialise(status) {
+  var type = this.options.type;
+  var didConsent = this.hasConsented();
+  if (type == 'opt-in' && didConsent) {
+    // enable cookies
+  }
+  if (type == 'opt-out' && !didConsent) {
+    // disable cookies
+  }
+}
  
-// function onStatusChange(status, chosenBefore) {
-//   var type = this.options.type;
-//   var didConsent = this.hasConsented();
+function onStatusChange(status, chosenBefore) {
+  var type = this.options.type;
+  var didConsent = this.hasConsented();
 
-//   if (type == 'opt-in' && didConsent) {
-//     // enable cookies
-//   }
-//   if (type == 'opt-out' && !didConsent) {
-//     // disable cookies
-//   }
-// }
+  if (type == 'opt-in' && didConsent) {
+    // enable cookies
+  }
+  if (type == 'opt-out' && !didConsent) {
+    // disable cookies
+  }
+}
  
-// function onRevokeChoice() {
-//   var type = this.options.type;
+function onRevokeChoice() {
+  var type = this.options.type;
 
-//   if (type == 'opt-in') {
-//     // disable cookies
-//   }
-//   if (type == 'opt-out') {
-//     // enable cookies
-//   }
-// }
+  if (type == 'opt-in') {
+    // disable cookies
+  }
+  if (type == 'opt-out') {
+    // enable cookies
+  }
+}
 
 // Cookies end
 
